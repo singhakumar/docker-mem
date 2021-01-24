@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'docker-node' }
-    agent { dockerfile true }
+#   agent { dockerfile true }
     stages {
         stage('Git Pull') {
             steps {
