@@ -1,9 +1,9 @@
 pipeline {
     agent { label 'docker-node' }
     stages {
-        stage('Git Pull') {
+        stage('Create Docker Images') {
             steps {
-                sh 'echo hello'
+                sh 'docker build -t localhost:5000/ubuntu:1.6 .'
             }
         }
     }
