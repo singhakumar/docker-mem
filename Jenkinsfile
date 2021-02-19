@@ -8,7 +8,7 @@ pipeline {
             }
         stage('Docker Remove Images') {
             steps {
- 
+                echo "Hello World"
                   }
             } 
           }
