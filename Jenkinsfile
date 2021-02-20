@@ -1,14 +1,19 @@
 pipeline {
     agent { label 'docker-node' }
     stages {
-        stage('Create Docker Images') {
+        stage('Create Docker Image') {
             steps {
-                sh 'docker build -t localhost:5000/ubuntu:1.9 .'
+                sh 'docker build -t localhost:5000/ubuntu:1.4 .'
                   }
             }
-        stage('Docker Remove Images') {
+        stage('Docker Tag Image') {
             steps {
-                echo "Hello World"
+                sh 'docker tag localhost:5000/ubuntu:1.4 singhakumarr/doceker-mem:1.4'
+                  }
+            } 
+        stage('Docker Push Image') {
+            steps {
+                sh 'docker push singhakumarr/doceker-mem:1.4'
                   }
             } 
           }
